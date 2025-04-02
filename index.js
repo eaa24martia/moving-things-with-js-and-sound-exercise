@@ -53,7 +53,7 @@ function moveDodgerUp() {
     }
 }
 
-// Funktion til at flytte dodger ned
+// Function to move dodger down
 function moveDodgerDown() {
     const bottomNumbers = dodger.style.bottom.replace("px", "");
     const bottom = parseInt(bottomNumbers);
