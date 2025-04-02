@@ -23,11 +23,43 @@ function moveDodgerRight() {
   }
 }
 
+// Funktion, der flytter dodgeren op
+function moveDodgerUp() {
+    const bottomNumbers = dodger.style.bottom.replace("px", "");
+    const bottom = parseInt(bottomNumbers);
+
+    if (bottom < 380) {
+        dodger.style.bottom = `${bottom + 1}px`;
+    }
+}
+
+// Funktion, der flytter dodgeren ned
+function moveDodgerDown() {
+    const bottomNumbers = dodger.style.bottom.replace("px", "");
+    const bottom = parseInt(bottomNumbers);
+
+    if (bottom > 0) {
+        dodger.style.bottom = `${bottom - 1}px`;
+    }
+}
+
+
+
 // Listener, der tjekker for om der bliver trykket venstre eller højre
 document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowLeft") {
     moveDodgerLeft();
-  } else if (e.key === "ArrowRight") {
+  } 
+  
+  if (e.key === "ArrowRight") {
     moveDodgerRight(); 
+  }
+
+  if (e.key === "ArrowUp") {
+    moveDodgerUp(); 
+  }
+
+  if (e.key === "ArrowDown") {
+    moveDodgerDown(); 
   }
 });
